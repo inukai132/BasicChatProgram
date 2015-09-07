@@ -5,6 +5,8 @@
 
 #pragma once
 
+
+
 #include "targetver.h"
 
 #include <stdio.h>
@@ -15,6 +17,7 @@
 #include <time.h>
 #include <WinSock2.h>
 #include <iostream>
+#include <WS2tcpip.h>
 #pragma comment(lib, "Ws2_32.lib")
 
 

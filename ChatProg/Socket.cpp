@@ -67,7 +67,7 @@ void Socket::GetAndSendMessage()
 void ClientSocket::ConnectToServer(const char* ipAddress, int port)
 {
 	myAddress.sin_family = AF_INET;
-	myAddress.sin_addr.s_addr = inet_addr(ipAddress);
+	inet_pton(AF_INET, ipAddress, &(myAddress.sin_addr));
 	myAddress.sin_port = htons(port);
 
 	std::cout << "Connecting\n";
@@ -97,7 +97,7 @@ void ServerSocket::StartHosting(int port)
 void ServerSocket::Bind(int port)
 {
 	myAddress.sin_family = AF_INET;
-	myAddress.sin_addr.s_addr = inet_addr("0.0.0.0");
+	inet_pton(AF_INET, "0.0.0.0", &(myAddress.sin_addr));
 	myAddress.sin_port = htons(port);
 
 	std::cout << "BIND TO PORT\n";
